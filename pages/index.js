@@ -4,6 +4,7 @@ import {
     makeStyles,
     Box
 } from '@material-ui/core'
+import Link from 'next/link'
 
 import Header from './components/Header'
 import Post from './components/Post'
@@ -43,13 +44,18 @@ function Home() {
         getPosts()
     }, [])
 
+    const clickedPost = async (post) => {
+        <Link href="/post/[id]" as={`/post/${post.id}`} />
+        console.log(post)
+    }
+
     return(
         <Box className={classes.root}>
             <Header title={"Home"}/>
             <div className={classes.toolbar}></div>
             <Box flexGrow={1}>
                 {
-                    posts.map(post => <Post className={classes.post} postTitle={post.title} key={`${post.id}`} />)
+                    posts.map(post => <Post onPostClicked={clickedPost} className={classes.post} post={post} key={`${post.id}`} />)
                 }
             </Box>
         </Box>

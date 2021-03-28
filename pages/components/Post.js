@@ -5,6 +5,7 @@ import {
     SvgIcon,
 } from '@material-ui/core'
 import {Assignment} from '@material-ui/icons'
+import Link from 'next/link'
 
 const useStyles = makeStyles({
     root:{
@@ -27,7 +28,7 @@ const useStyles = makeStyles({
         fontSize: 50,
         paddingBottom: 35,
     },
-    title: {
+    textTitle: {
         fontSize: 12,
         padding: 15,
         fontWeight: 'normal',
@@ -38,17 +39,24 @@ function Post(props) {
 
     const classes = useStyles()
 
+    const onPostClicked = () => {
+        props.onPostClicked(props.post)
+    }
+
+    
     return (
-        <ButtonBase className={classes.root} disableTouchRipple={true}>
-            <Box className={classes.box}>
-                <SvgIcon className={classes.icon}>
-                    <Assignment />
-                </SvgIcon>
-                <spa className={classes.title}>
-                    {props.postTitle}
-                </spa>
-            </Box>
-        </ButtonBase>
+        <Link href="/post/[id]" as={`/post/${props.post.id}`}>
+            <ButtonBase onClick={onPostClicked} className={classes.root} disableTouchRipple={true}>
+                <Box className={classes.box}>
+                    <SvgIcon className={classes.icon}>
+                        <Assignment />
+                    </SvgIcon>
+                    <spa className={classes.textTitle}>
+                        {props.post.title}
+                    </spa>
+                </Box>
+            </ButtonBase>
+        </Link>
     )
 
 }
