@@ -1,22 +1,26 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import {
-    makeStyles
+    makeStyles,
+    Box
 } from '@material-ui/core'
 
 import Header from './components/Header'
+import Post from './components/Post'
 
 const useStyles = makeStyles({
     root: {
         display: 'flex',
-        flexDirection: 'column'
+        flexGrow: 1,
+        alignItems: 'center'
     },
     toolbar:{
         minHeight: 50
     },
-    main: {
-        width: "100vh",
-        padding: 24,
+    post: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center'
     }
 })
 
@@ -40,15 +44,15 @@ function Home() {
     }, [])
 
     return(
-        <div className={classes.root}>
+        <Box className={classes.root}>
             <Header title={"Home"}/>
             <div className={classes.toolbar}></div>
-            <div className={classes.main}>
+            <Box flexGrow={1}>
                 {
-                    posts.map(post => <a key={`${post.id}`}>{post.title}</a>)
+                    posts.map(post => <Post className={classes.post} postTitle={post.title} key={`${post.id}`} />)
                 }
-            </div>
-        </div>
+            </Box>
+        </Box>
     )
 };
 
