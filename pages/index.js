@@ -22,7 +22,7 @@ function Home() {
     const classes = useStyles();
 
     const [posts, setPosts] = useState([]);
-    const [clickedP, setClickedP] = useState(null);
+    const [clickedP, setClickedP] = useState({postClicked: null});
 
     const urlApi = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -37,9 +37,9 @@ function Home() {
         getPosts()
     }, [])
 
-    const clickedPost = async (post) => {
+    const clickedPost = (post) => {
         const listPost = posts.filter(p => (post.id <= 4) ? (p.id >= 0 && p.id <= 5 && p.id != post.id) : (p.id >= 0 && p.id <= 4))
-        await setClickedP({
+        setClickedP({
             postClicked: post,
             listPost
         })
@@ -52,9 +52,9 @@ function Home() {
             </div>
             <div>
                 {
-                    clickedP === null ? 
+                    clickedP.postClicked === null ? 
                         <Body posts={posts} clickedPost={clickedPost}/> :
-                        <PostBody post={clickedP}/>
+                        <PostBody posts={clickedP}/>
                 }
             </div>
         </div>

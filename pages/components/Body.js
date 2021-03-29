@@ -25,4 +25,13 @@ function Body(params) {
     )
 }
 
+export async function getServerSideProps(context) {
+    const res = await axios('https://jsonplaceholder.typicode.com/posts')
+    const data = await res.data
+  
+    return {
+      props: { props: { data } },
+    }
+}
+
 export default Body;

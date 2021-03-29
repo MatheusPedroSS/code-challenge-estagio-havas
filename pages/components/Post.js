@@ -33,12 +33,12 @@ const useStyles = makeStyles({
     }
 })
 
-function Post(props) {
+function Post(params) {
 
     const classes = useStyles()
 
     const onPostClicked = () => {
-        props.onPostClicked(props.post)
+        params.onPostClicked(params.post)
     }
 
     
@@ -49,11 +49,20 @@ function Post(props) {
                     <Assignment />
                 </SvgIcon>
                 <span className={classes.textTitle}>
-                    {props.post.title}
+                    {params.post.title}
                 </span>
             </Box>
         </ButtonBase>
     )
+}
+
+export async function getServerSideProps(context) {
+    const res = await axios('https://jsonplaceholder.typicode.com/posts')
+    const data = await res.data
+  
+    return {
+      props: { props: { data } },
+    }
 }
 
 export default Post;
