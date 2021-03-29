@@ -3,6 +3,7 @@ import {
     Toolbar,
     makeStyles,
     SvgIcon,
+    ButtonBase,
 } from '@material-ui/core'
 import {Home} from '@material-ui/icons'
 
@@ -18,18 +19,20 @@ const useStyles = makeStyles({
     }
 })
 
-function Header(props) {
+function Header(params) {
 
     const classes = useStyles();
 
     return(
         <AppBar position='fixed' className={classes.root}>
             <Toolbar>
-                <SvgIcon className={classes.iconHome}>
-                    <Home/>
-                </SvgIcon>
+                <ButtonBase onClick={params.clickedHome}>
+                    <SvgIcon className={classes.iconHome}>
+                        <Home/>
+                    </SvgIcon>
+                </ButtonBase>
                 <span>
-                    <h3>{props.title}</h3>
+                    <h3>{params.title}</h3>
                 </span>
             </Toolbar>
         </AppBar>

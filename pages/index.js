@@ -45,10 +45,14 @@ function Home() {
         })
     }
 
+    const clickedHome = () => {
+        setClickedP({postClicked: null})
+    }
+
     return(
         <div>
             <div className={classes.toolbar}>
-                <Header title={"Home"}/>
+                <Header title={clickedP.postClicked === null ? "Home": "Post"} clickedHome={clickedHome}/>
             </div>
             <div>
                 {
