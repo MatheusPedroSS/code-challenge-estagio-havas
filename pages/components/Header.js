@@ -26,7 +26,7 @@ function Header(params) {
     return(
         <AppBar position='fixed' className={classes.root}>
             <Toolbar>
-                <ButtonBase onClick={params.clickedHome}>
+                <ButtonBase onClick={params.clickedHome} disableTouchRipple={true}>
                     <SvgIcon className={classes.iconHome}>
                         <Home/>
                     </SvgIcon>

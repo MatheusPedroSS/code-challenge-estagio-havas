@@ -13,6 +13,9 @@ const useStyles = makeStyles({
     body: {
         paddingLeft: 30
     },
+    readMore: {
+        paddingTop: 30,
+    }
 })
 
 const PostBody = (params) => {
@@ -24,6 +27,17 @@ const PostBody = (params) => {
             <div>
                 <h1 className={classes.title}>{params.posts.postClicked.title}</h1>
                 <p className={classes.body}>{params.posts.postClicked.body}</p>
+            </div>
+            <div className={classes.readMore}>
+                <h1 className={classes.title}>Leia Mais:</h1>
+                {
+                    params.posts.listPost.map(post => (
+                        <div>
+                            <h2 className={classes.title}>{post.title} - {post.id}</h2>
+                            <p className={classes.body}>{post.body}</p>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
