@@ -6,18 +6,17 @@ import {
 const useStyles = makeStyles({
     root:{
         display: 'flex',
-        height: 250,
+        minHeight: 250,
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#d2d2d2',
         width: '100%',
-        boxShadow: 10,
         borderRadius: 25,
         marginTop: 25,
     },
     title: {
-        padding: 10
+        padding: 20
     },
     body: {
         fontSize: 18,

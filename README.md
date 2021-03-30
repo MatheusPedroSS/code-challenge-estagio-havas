@@ -47,3 +47,13 @@ Abra [http://localhost:3000](http://localhost:3000) with your browser to see the
 Se preferir a mesma aplicação está na plataforma da Vercel:
 [Projeto na Vercel](https://code-challenge-estagio-havas.vercel.app/)
 
+## Resposta as perguntas: 
+ - 1.Descreva possíveis otimizações de performance que você poderia fazer no seu
+próprio código.
+```
+Creio que uma otimização possivel seria ter implementado Redux, mas como não estudei muito a respeido dele. Não me senti confortavel para implementar, mas estou estudando mais a respeito e em proximos projetos ele estará lá.
+```
+ - 2.O que você poderia ter melhorado?
+```
+Ter utilizado os conceitos de design patterns, ter um código mais legivel e ter feito mais code review.
+```

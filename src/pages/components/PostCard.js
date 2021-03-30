@@ -19,7 +19,6 @@ const useStyles = makeStyles({
         background: '#d2d2d2',
         width: 360,
         height: 180,
-        boxShadow: 10,
         borderRadius: 20
     },
     icon: {
