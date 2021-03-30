@@ -32,14 +32,14 @@ Abra [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Tecnologias utilizadas:
 
-@material-ui/core: 4.11.3
-@material-ui/icons: 4.11.2
-axios: 0.21.1,
-install: 0.13.0,
-next: 10.0.9,
-npm: 7.7.5,
-react: 17.0.2,
-react-dom: 17.0.2
+ - @material-ui/core: 4.11.3
+ - @material-ui/icons: 4.11.2
+ - axios: 0.21.1,
+ - install: 0.13.0,
+ - next: 10.0.9,
+ - npm: 7.7.5,
+ - react: 17.0.2,
+ - react-dom: 17.0.2
 
 ## Versão no Vercel
 
