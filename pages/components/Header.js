@@ -32,7 +32,7 @@ function Header(params) {
                     </SvgIcon>
                 </ButtonBase>
                 <span>
-                    <h3>{params.title}</h3>
+                    <h1>{params.title}</h1>
                 </span>
             </Toolbar>
         </AppBar>
