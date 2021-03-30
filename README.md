@@ -31,7 +31,8 @@ Abrir o local host para visualizar o projeto:
 Abra [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Tecnologias utilizadas:
-
+ - JavaScript
+ - node: 14.16.0
  - @material-ui/core: 4.11.3
  - @material-ui/icons: 4.11.2
  - axios: 0.21.1,
